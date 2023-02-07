@@ -1,0 +1,78 @@
+# Configuration for Cog ⚙️
+# Reference: https://github.com/replicate/cog/blob/main/docs/yaml.md
+
+build:
+  # set to true if your model requires a GPU
+  gpu: true
+  cuda: "10.0"
+
+  # a list of ubuntu apt packages to install
+  system_packages:
+    - "wget"
+    - "zip"
+    - "unzip"
+    - "ffmpeg"
+    # - "libgl1-mesa-glx"
+    # - "libglib2.0-0"
+
+  # python version in the form '3.8' or '3.8.12'
+  python_version: "3.7"
+
+  # a list of packages in the format <package-name>==<version>
+  python_packages:
+    # - "ninja"
+    - "tensorflow-gpu==1.15"
+    - "ftfy==6.1.1"
+    - "timm==0.6.7"
+    - "dill==0.3.5.1"
+    - "lpips==0.1.4"
+  
+  # commands run after the environment is setup
+  run:
+    # - "pip install git+https://github.com/pollinations/lucid-sonic-dreams"
+    # - "mkdir /content"
+    # - "chmod -R a+rwx /content"
+    # - "cd /content && git clone https://github.com/NVlabs/stylegan2-ada.git stylegan2"
+    # - "cd /content && cp -rv stylegan2/dnnlib ./dnnlib_sg2"
+    # - "cd /content && wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip -o /content/ninja-linux.zip"
+    # - "cd /content && unzip -o ninja-linux.zip.1 -d /usr/local/bin/"
+    # - "cd /content && update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force "
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/Abstract art.pkl\" -O \"/content/Abstract art.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/Anime portraits.pkl\" -O \"/content/Anime portraits.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/CIFAR 10.pkl\" -O \"/content/CIFAR 10.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/CIFAR 100.pkl\" -O \"/content/CIFAR 100.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/Doors.pkl\" -O \"/content/Doors.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/Imagenet.pkl\" -O \"/content/Imagenet.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/Maps.pkl\" -O \"/content/Maps.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/Visionary Art.pkl\" -O \"/content/Visionary Art.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/WikiArt.pkl\" -O \"/content/WikiArt.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/beetles.pkl\" -O \"/content/beetles.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/cakes.pkl\" -O \"/content/cakes.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/car (config-e).pkl\" -O \"/content/car (config-e).pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/car (config-f).pkl\" -O \"/content/car (config-f).pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/cat.pkl\" -O \"/content/cat.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/church.pkl\" -O \"/content/church.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/faces (FFHQ config-e 256x256).pkl\" -O \"/content/faces (FFHQ config-e 256x256).pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/faces (FFHQ config-e).pkl\" -O \"/content/faces (FFHQ config-e).pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/faces (FFHQ config-f 512x512).pkl\" -O \"/content/faces (FFHQ config-f 512x512).pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/faces (FFHQ config-f).pkl\" -O \"/content/faces (FFHQ config-f).pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/faces (FFHQ slim 256x256).pkl\" -O \"/content/faces (FFHQ slim 256x256).pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/figure drawings.pkl\" -O \"/content/figure drawings.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/flowers.pkl\" -O \"/content/flowers.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/fursona.pkl\" -O \"/content/fursona.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/grumpy cat.pkl\" -O \"/content/grumpy cat.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/horse.pkl\" -O \"/content/horse.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/microscope images.pkl\" -O \"/content/microscope images.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/modern art.pkl\" -O \"/content/modern art.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/my little pony.pkl\" -O \"/content/my little pony.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/obama.pkl\" -O \"/content/obama.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/painting faces.pkl\" -O \"/content/painting faces.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/panda.pkl\" -O \"/content/panda.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/textures.pkl\" -O \"/content/textures.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/trypophobia.pkl\" -O \"/content/trypophobia.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/ukiyoe faces.pkl\" -O \"/content/ukiyoe faces.pkl\""
+    # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/wildlife.pkl\" -O \"/content/wildlife.pkl\""
+    - "pip install scikit-image librosa pygit2 pandas gdown mega.py"
+    - "pip install moviepy SoundFile"
+# predict.py defines how predictions are run on your model
+predict: "predict.py:Predictor"
