@@ -74,5 +74,6 @@ build:
     # - "cd /content && wget -N \"https://ipfs.pollinations.ai/ipfs/QmV5HQM1Ms3c6sejmsMwiCDNLhMLNs6f8jESenDvcYjfin/wildlife.pkl\" -O \"/content/wildlife.pkl\""
     - "pip install scikit-image librosa pygit2 pandas gdown mega.py"
     - "pip install moviepy SoundFile"
+    - "pip install ninja"
 # predict.py defines how predictions are run on your model
 predict: "predict.py:Predictor"

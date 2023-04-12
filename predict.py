@@ -103,6 +103,10 @@ class Predictor(BasePredictor):
             description='Controls the variety of visuals generated. Lower values lead to lower variety. Note: A very low value will usually lead to "jittery" visuals. Must range from 0 to 100.',
             default=50,
         ),
+        batch_size: int = Input(
+            description="The number of images to generate at once. Higher values will typically lead to faster generation, but may cause memory issues. Must range from 1 to 100.",
+            default=10,
+        ),
     ) -> Path:
         """Run a single prediction on the model"""
         pulse_percussive = pulse_react_to == "percussive"
@@ -125,7 +129,7 @@ class Predictor(BasePredictor):
               motion_randomness = motion_randomness / 100,
               truncation = truncation / 100,
               start = 0,
-              batch_size=25,)
+              batch_size=batch_size,)
         return Path(f"{output_path}/lucid-sonic-dream.mp4")
 
 # if __name__ == "__main__":
